@@ -282,6 +282,7 @@ header .img-circle {
     color: #fff;
     opacity: 0;
     background: rgba(240,95,64,.9);
+
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -293,6 +294,8 @@ header .img-circle {
     width: 100%;
     text-align: center;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
 }
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
