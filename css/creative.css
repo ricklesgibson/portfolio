@@ -234,6 +234,8 @@ header .img-circle {
         top: 50%;
         padding: 0 50px;
         transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
     }
 
     header .header-content .header-content-inner {
