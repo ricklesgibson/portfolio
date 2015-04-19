@@ -235,7 +235,7 @@ header .img-circle {
 
     header .header-content {
         position: absolute;
-        top: 50%;
+        top: 45%;
         padding: 0 50px;
         transform: translateY(-50%);
         -webkit-transform: translateY(-50%);
