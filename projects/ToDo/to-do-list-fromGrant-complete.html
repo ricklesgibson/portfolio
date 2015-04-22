@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TO DO List</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
+
+
+</head>
+<body >
+<div class="page-header">
+    <h1>  To Do List</h1>
+
+    <!--THis is where we need to keep count -->
+   Items Completed: <span id="count"  class="label label-default" > 0</span>
+</div>
+<div id="panel" class="panel">
+    <div class="input-group">
+        <!--The Add Item Box-->
+        <input class="form-control" type="text" name="item-input" />
+            <span class="input-group-btn">
+                <!--Button to add the text-->
+                <button id="add-item" class="btn btn-default" >Add</button>
+            </span>
+    </div>
+
+    <!--Table to add the items-->
+    <table id="listTable" class="table table-striped">
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Completed</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody id="tBody">
+         <!--Rows will be added and removed below-->
+
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+
+/* We'll set up a count to keep track of the items we have completed. Since we
+   want our count to persist in between clicks, we'll use a global variable. We'll
+   see later how we can mostly avoid using global variable, but for now this is
+   fine. */
+   var completedCount = 0;
+
+   //add event listener to add button, that when clicked, adds the
+   document.getElementById("add-item").addEventListener("click", function (){
+
+   /* we can declare a list of variables like this if we don't want to type
+      the 'var' keyword a bunch of times */
+      var inputEl,listItem,listTable,tBody,countEl;
+
+
+      /* grab the input text box from the DOM. Since it has a unique name attribute,
+         we know that by using the 'getElementsByName' selector, it will be the first
+         and only one returned. So using [0], we know it grabs the right one because
+         there is only one. */
+         inputEl = document.getElementsByName("item-input")[0];
+         listItem = inputEl.value;
+
+       /* reset out input's value to an empty string so we don't leave
+          text hanging there we have already used  */
+          inputEl.value = '';
+
+          listTable = document.getElementById("listTable");
+          tBody = document.getElementById("tBody");
+          countEl = document.getElementById("count");
+
+   /* we first create a new 'tr' element..a table row, that will hold
+      all of our tds(table columns) */
+      var newTr = document.createElement('tr');
+
+   /* Below we create a table column and set the innerHTML to be the
+      list item we entered in the text box, we then append it to our table
+      row */
+      var newTd1 = document.createElement('td');
+          newTd1.innerHTML = listItem;
+          newTr.appendChild(newTd1);
+
+   /* We follow the same general process as above, only this time we must
+      add in a checkbox to the td with it's own event handler */
+      var newTd2 = document.createElement('td');
+      var newCheckbox = document.createElement('input');
+          newCheckbox.type = 'checkbox';
+          newCheckbox.value = 0;
+          newCheckbox.addEventListener('click', function () {
+
+             /* Our conditional statement is the real meat and potatoes, aside
+                from grabbing the user input. If the value of our checkbox is
+                currently zero, and the click event has fired, that means a user
+                is selecting it to check it. We set the value to 1 so it appears
+                checked, we then increment our count, which will be displayed to the
+                user. */
+                if(this.value == 0){
+                    this.setAttribute("value",1);
+                    completedCount +=  1;
+                    countEl.innerHTML = completedCount;
+                }
+                else {
+                    this.setAttribute("value",0);
+                    completedCount -=  1;
+                    countEl.innerHTML = completedCount;
+                }
+          });
+          newTd2.appendChild(newCheckbox);
+          newTr.appendChild(newTd2);
+
+   /* For the third column in our table, we want a checkbox that when clicked
+      will remove the entire row it's in from the DOM. Essentially just an erase
+      button. Since our checkbox is nested inside a 'td', that is our checkboxes
+      parent. To access the 'tr' it's contained in, that is the parent of the 'td'.
+      In other words we have to go back up the nesting hierarchy two places, first to
+      the containing 'td', and up one more to the containing 'tr'. The 'tr' is the
+      table row we want to remove. */
+      var newTd3 = document.createElement('td');
+      var newCheckbox2 = document.createElement('input');
+      newCheckbox2.type = 'checkbox';
+      newCheckbox2.value = 0;
+      newCheckbox2.addEventListener('click', function () {
+
+       /* remove row from the DOM, we do this by accessing the parent node
+          twice. */
+          tBody.removeChild(this.parentNode.parentNode);
+
+       /* an additional piece of functionality we may want to add is:
+          If the list is empty, make sure to reset the count to zero  */
+          if(tBody.childElementCount == '0'){
+              completedCount = 0;
+              countEl.innerHTML = completedCount;
+          }
+      });
+
+      //add the checkbox to our new 'td' column, then add that column to our row
+      newTd3.appendChild(newCheckbox2);
+      newTr.appendChild(newTd3);
+
+      //add the row we built to the tBody
+      tBody.appendChild(newTr);
+
+  });
+
+</script>
+</body>
+</html>
