@@ -12,13 +12,14 @@
 
     <title>Rick Gibson</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css"> -->
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
@@ -114,35 +115,32 @@
                     <hr class="primary">
                     <p>Discuss your next project</p>
                 </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center contact">
-                    <a href="tel:+15182581529" class="fa fa-phone fa-3x wow bounceIn"></a>
-                </div>
                 <div class="col-lg-4 text-center contact">
-                    <a href="mailto:rick@rickgibson.co" class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></a>
+                    <a href="mailto:rick@rickgibson.co" class="btn-mail fa fa-envelope fa-3x wow bounceIn" data-wow-delay=".1s"></a>
                 </div>
                 <div class="footer-col col-lg-8 col-lg-offset-2 text-center">
                     <h3>On the Web</h3>
                     <ul class="list-inline">
                         <li>
-                            <a href="https://angel.co/rick-gibson-1" class="btn-social btn-outline"><i class="fa fa-fw fa-angellist"></i></a>
+                            <a href="https://angel.co/rick-gibson-1" class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="AngelList"><i class="fa fa-fw fa-angellist"></i></a>
                         </li>
                         <li>
-                            <a href="http://stackoverflow.com/users/4521494/rick-gibson" class="btn-social btn-outline"><i class="fa fa-fw fa-stack-overflow"></i></a>
+                            <a href="http://stackoverflow.com/users/4521494/rick-gibson" class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="Stack Overflow"><i class="fa fa-fw fa-stack-overflow"></i></a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/ricklesgibson" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            <a href="https://twitter.com/ricklesgibson" class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-fw fa-twitter"></i></a>
                         </li>
                         <li>
-                            <a href="http://www.linkedin.com/in/arichardgibson" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            <a href="http://www.linkedin.com/in/arichardgibson" class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="LinkedIn"><i class="fa fa-fw fa-linkedin"></i></a>
                         </li>
                         <li>
-                            <a href="https://profiles.generalassemb.ly/profiles/rickgibson" class="btn-social btn-outline"><i class="fa fa-fw fa-users"></i></a>
+                            <a href="https://profiles.generalassemb.ly/profiles/rickgibson" class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="General Assembly"><i class="fa fa-fw fa-users"></i></a>
                         </li>
                          <li>
-                            <a href="https://github.com/ricklesgibson" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            <a href="https://github.com/ricklesgibson" class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="GitHib"><i class="fa fa-fw fa-github"></i></a>
                         </li>
                          <li>
-                            <a href="http://www.builtinla.com/member/rick-gibson" class="btn-social btn-outline"><i class="fa fa-fw fa-cogs"></i></a>
+                            <a href="http://www.builtinla.com/member/rick-gibson" class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="Built In LA"><i class="fa fa-fw fa-cogs"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -153,8 +151,15 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
+
+     <!-- Compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
 
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>

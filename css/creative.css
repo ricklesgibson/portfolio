@@ -470,6 +470,19 @@ fieldset[disabled] .btn-primary.active {
     background: #ee4b28;
 }
 
+.btn-mail {
+    color: #f05f40;
+    background: 0 0;
+    transition: all .3s ease-in-out;
+}
+
+.btn-mail:hover,
+.btn-mail:focus,
+.btn-mail:active,
+.btn-mail.active {
+    color: #ee4b28;
+}
+
 .btn-social {
     display: inline-block;
     width: 50px;
